@@ -1,0 +1,52 @@
+/* TABLE OF CONTENS:
+1. normalise
+2. base elements
+3. components
+4. layouts
+4. custom  */
+
+/* 1. normalise */
+
+/* 2. base elements */
+
+:root {
+    --dark-bg-color: #123A4E;
+    --bright-bg-color: #FDFDF0;
+    --medium-bg-color: #F7EED7;
+    --contrast-bg-color: #BFD5DB;
+    --black-text-color: #000;
+    --white-text-color: #FFF;
+    --contrast-text-color: #F9A826;
+    --dark-text-color: #123A4E;
+}
+
+html {
+    color: var(--black-text-color);
+    background-color: var(--bright-bg-color);
+    scroll-behavior: smooth;
+    font-size: 14px;
+}
+
+@media (min-width: 900px) {
+    html { font-size: 16px;}
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--dark-text-color);
+}
+
+/* 3. components */
+
+/* 3.1 base components */
+
+img.round {
+    border-radius: 50%;
+}
+
+/* 3.2 layout components */
+
+div.card {
+    border-radius: 12px;
+    padding: 2.5rem;
+}
