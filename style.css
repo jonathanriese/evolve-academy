@@ -1,39 +1,104 @@
 /* TABLE OF CONTENS:
-1. normalise
+1. resets
 2. base elements
 3. components
 4. layouts
 4. custom  */
 
-/* 1. normalise */
+/* 1. resets */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+ul, blockquote, p, h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 /* 2. base elements */
 
 :root {
-    --dark-bg-color: #123A4E;
-    --bright-bg-color: #FDFDF0;
-    --medium-bg-color: #F7EED7;
-    --contrast-bg-color: #BFD5DB;
-    --black-text-color: #000;
-    --white-text-color: #FFF;
-    --contrast-text-color: #F9A826;
-    --dark-text-color: #123A4E;
+    --dark-color: #123A4E;
+    --bright-color: #FDFDF0;
+    --medium-color: #F7EED7;
+    --black-color: #000;
+    --contrast-color-blue: #BFD5DB;
+    --contrast-color-orange: #F9A826;
 }
 
 html {
-    color: var(--black-text-color);
-    background-color: var(--bright-bg-color);
+    background-color: var(--bright-color);
+    color: var(--black-color);
+    font-family: 'Karla', sans-serif;
+    line-height: 1.5;
     scroll-behavior: smooth;
-    font-size: 14px;
 }
 
-@media (min-width: 900px) {
-    html { font-size: 16px;}
+@media (min-width: 800px) {
+    html {
+    }
 }
 
-h1 {
-    font-size: 3.5rem;
-    color: var(--dark-text-color);
+/* typography */
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--black-color);
+}
+
+a {
+    font-weight: medium;
+}
+
+h1, blockquote {
+    font-family: 'Cabin', sans-serif;
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.cover p {
+    margin-bottom: 1rem;
+}
+
+.cover h1 {
+    line-height: 1.25;
+}
+
+.quote blockquote {
+    font-style: italic;
+    max-width: 800px;
+}
+
+#faculty > :is(p, h1) {
+    text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+    p.t-large, .quote p {
+        font-size: 1.25rem;
+    }
+    h1, blockquote {
+        margin-bottom: 2rem;
+        font-size: 3vw;
+    }
 }
 
 /* 3. components */
@@ -46,7 +111,110 @@ img.round {
 
 /* 3.2 layout components */
 
+/* sections */
+
+section, header, footer {
+    padding: 0 1.5rem;
+    margin:  5rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section.bg-dark, section.quote, footer {
+    padding: 5rem 1.5rem;
+    margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+    section {
+        margin: 10rem 0;
+    }
+    section.bg-dark, section.quote, footer {
+        padding: 10rem 1.5rem;
+    }
+}
+
+header {
+    padding: 1.5rem;
+    margin: 0;
+    position: fixed;
+}
+
+:is(header, footer) ul {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+header.scrolled {
+    background-color: var(--bright-color);
+    transition: background-color 200ms linear;
+}
+
+section > *, header nav, footer ul {
+    max-width: 1200px;
+    width: 100%;
+}
+
+
+footer, section.bg-dark  {
+    background-color: var(--dark-color);
+    color: var(--bright-color);
+}
+
+
+.bg-dark p {
+    color: var(--bright-color);
+}
+
+section.quote {
+    background-color: var(--contrast-color-blue);
+    text-align: center;
+}
+
+section.cover {
+    height: 100vh;
+    margin: 0;
+}
+
+.cover div > * {
+    max-width: 700px;
+}
+
+/* cards */
+
+div.card-container {
+    display: flex;
+    gap: 1rem;
+    flex-flow: row wrap;
+}
+
+div.col-2 {
+    flex: 1 1 500px;
+}
+
+div.col-3 {
+    flex: 1 1 300px;
+}
+
 div.card {
+    background-color: var(--medium-color);
     border-radius: 12px;
-    padding: 2.5rem;
+    padding: 1rem;
+}
+
+#faculty div.card-container {
+    margin: 2.5rem 0;
+}
+
+@media only screen and (min-width: 800px){
+    div.card {
+        padding: 1.5rem;
+    }
+    div.col-2 {
+        flex: 1 0 40%;
+    }
 }
