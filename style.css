@@ -3,7 +3,7 @@
 2. base elements
 3. components
 4. layouts
-4. custom  */
+5. custom  */
 
 /* 1. resets */
 
@@ -50,11 +50,6 @@ html {
     scroll-behavior: smooth;
 }
 
-@media (min-width: 800px) {
-    html {
-    }
-}
-
 /* typography */
 
 p {
@@ -64,18 +59,48 @@ p {
 }
 
 a {
-    font-weight: medium;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+a.button {
+    margin-top: 5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 500px;
+    background-color: var(--contrast-color-blue);
+    color: var(--dark-color);
+}
+
+a.button:is(:hover, :focus) {
+    color: var(--bright-color);
+    background-color: var(--dark-color);
+    transition: background-color 500ms ease;
+}
+
+a.button::after {
+    content: '↓';
+    margin-left: 3rem;
+}
+
+.bg-dark a {
+    font-weight: inherit;
+    color: var(--contrast-color-orange);
+}
+
+footer a {
+    color: var(--bright-color);
 }
 
 h1, blockquote {
     font-family: 'Cabin', sans-serif;
-    font-size: 2rem;
+    font-size: 1.875rem;
     color: var(--dark-color);
     margin-bottom: 1rem;
 }
 
 .cover p {
-    margin-bottom: 1rem;
+    margin-bottom: 6rem;
 }
 
 .cover h1 {
@@ -98,6 +123,10 @@ h1, blockquote {
     h1, blockquote {
         margin-bottom: 2rem;
         font-size: 3vw;
+    }
+    a.button {
+        border: 1px solid var(--dark-color);
+        background-color: transparent;
     }
 }
 
@@ -128,15 +157,6 @@ section.bg-dark, section.quote, footer {
     margin: 0;
 }
 
-@media screen and (min-width: 800px) {
-    section {
-        margin: 10rem 0;
-    }
-    section.bg-dark, section.quote, footer {
-        padding: 10rem 1.5rem;
-    }
-}
-
 header {
     padding: 1.5rem;
     margin: 0;
@@ -149,11 +169,6 @@ header {
     gap: 2rem;
 }
 
-header.scrolled {
-    background-color: var(--bright-color);
-    transition: background-color 200ms linear;
-}
-
 section > *, header nav, footer ul {
     max-width: 1200px;
     width: 100%;
@@ -163,6 +178,11 @@ section > *, header nav, footer ul {
 footer, section.bg-dark  {
     background-color: var(--dark-color);
     color: var(--bright-color);
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -184,6 +204,134 @@ section.cover {
     max-width: 700px;
 }
 
+section.cover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#home section.cover {
+    background-image: url(https://res.cloudinary.com/dffi51zip/image/upload/c_scale,w_1920/v1618427742/Evolve/home-cover_cfr12y.jpg);
+}
+
+@media screen and (min-width: 800px) {
+    section {
+        margin: 10rem 0;
+    }
+    section.bg-dark, section.quote {
+        padding: 10rem 1.5rem;
+    }
+    footer ul {
+        flex-direction: row;
+    }
+}
+
+/* navigation */
+
+header nav {
+    display: flex;
+}
+
+header ul {
+    flex-direction: column;
+}
+
+header li {
+    display: none;
+}
+
+header li a {
+    font-weight: 300;
+}
+
+header li:first-of-type {
+    display: block;
+}
+
+header li:first-of-type a {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+header.active {
+    background-color: var(--bright-color);
+}
+
+header.active li {
+    display: block;
+}
+
+header.scrolled {
+    background-color: var(--bright-color);
+    transition: background-color 500ms ease;
+}
+
+.bar {
+    display: block;
+    width: 1rem;
+    height: 2px;
+    margin: 4px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--dark-color);
+}
+
+.active .bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.active .bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+@media screen and (min-width: 800px) {
+    nav li:last-of-type {
+        margin-left: auto;
+    }
+    .hamburger {
+        display: none;
+    }
+    header ul {
+        flex-direction: row;
+        align-items: baseline;
+    }
+    header li {
+        display: block;
+    }
+    header li:first-of-type a {
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+}
+
+/* columns */
+
+/* section#approach{
+    display: flex;
+    flex-flow: row;
+} */
+
+/* section#approach * {
+    max-width: 600px;
+} */
+
+@media only screen and (min-width: 900px){
+    section#approach{
+        display: flex;
+        flex-flow: row;
+    }
+    section#approach > * {
+        max-width: 540px;
+    }
+    section#approach > img {
+        margin-right: 5rem;
+    }
+}
+
 /* cards */
 
 div.card-container {
@@ -192,11 +340,11 @@ div.card-container {
     flex-flow: row wrap;
 }
 
-div.col-2 {
+.col-2 div.card {
     flex: 1 1 500px;
 }
 
-div.col-3 {
+.col-3 div.card {
     flex: 1 1 300px;
 }
 
@@ -218,3 +366,5 @@ div.card {
         flex: 1 0 40%;
     }
 }
+
+/* iframe */
