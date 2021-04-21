@@ -112,6 +112,13 @@ h1, blockquote {
     max-width: 800px;
 }
 
+h5 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    color: var(--contrast-color-orange);
+}
+
 #faculty > :is(p, h1) {
     text-align: center;
 }
@@ -152,7 +159,7 @@ section, header, footer {
     flex-direction: column;
 }
 
-section.bg-dark, section.quote, footer {
+section.bg-dark, section.quote, footer, section.bg-blue {
     padding: 5rem 1.5rem;
     margin: 0;
 }
@@ -161,6 +168,7 @@ header {
     padding: 1.5rem;
     margin: 0;
     position: fixed;
+    z-index: 100;
 }
 
 :is(header, footer) ul {
@@ -190,7 +198,7 @@ footer ul {
     color: var(--bright-color);
 }
 
-section.quote {
+section.quote, section.bg-blue {
     background-color: var(--contrast-color-blue);
     text-align: center;
 }
@@ -206,12 +214,26 @@ section.cover {
 
 section.cover {
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+}
+
+:is(#course, #community, #faculty) section.cover {
+    justify-content: flex-start;
+}
+
+:is(#course, #community, #faculty) .cover h1 {
+    margin-top: 25vh;
+    font-size: 4rem;
+    max-width: none;
+    text-align: center;
 }
 
 #home section.cover {
     background-image: url(https://res.cloudinary.com/dffi51zip/image/upload/c_scale,w_1920/v1618427742/Evolve/home-cover_cfr12y.jpg);
+}
+
+#course section.cover {
+    background-image: url(https://res.cloudinary.com/dffi51zip/image/upload/c_scale,w_1920/v1618427207/Evolve/course-cover_pagyit.jpg);
 }
 
 @media screen and (min-width: 800px) {
@@ -227,6 +249,10 @@ section.cover {
 }
 
 /* navigation */
+
+a.current {
+    font-weight: 500;
+}
 
 header nav {
     display: flex;
@@ -264,6 +290,10 @@ header.active li {
 header.scrolled {
     background-color: var(--bright-color);
     transition: background-color 500ms ease;
+}
+
+div.hamburger {
+    margin-top: 0.5rem
 }
 
 .bar {
@@ -334,7 +364,7 @@ header.scrolled {
 
 /* cards */
 
-div.card-container {
+.card-container {
     display: flex;
     gap: 1rem;
     flex-flow: row wrap;
@@ -348,23 +378,91 @@ div.card-container {
     flex: 1 1 300px;
 }
 
-div.card {
+.card, .summary {
     background-color: var(--medium-color);
     border-radius: 12px;
     padding: 1rem;
+}
+
+div.summary {
+    max-width: 700px;
 }
 
 #faculty div.card-container {
     margin: 2.5rem 0;
 }
 
+.bg-blue .card {
+    background-color: var(--bright-color);
+    text-align: left;
+}
+
+ol {
+    list-style: none;
+    counter-reset: numList;
+    padding: 0;
+}
+
+#course ol.col-1 {
+    position: relative;
+}
+
+/*#course ol.col-1::before {
+    content: '';
+    height: 100%;
+    border-right: solid 1px var(--dark-color);
+    position: absolute;
+    left: 20%;
+} */
+
+li.card {
+    font-weight: 500;
+}
+
+li.card span {
+    display: flex;
+    align-items: top;
+    align-items: flex-start;
+}
+
+.card-container.col-1 {
+    flex-direction: column;
+    max-width: 625px;
+}
+
+.bg-blue li li {
+    font-weight: 300;
+    margin-left: 2.5rem;
+    margin-top: 0.5rem;
+}
+
+section.bg-blue span::before {
+    counter-increment: numList;
+    content: counter(numList);
+    text-align: center;
+    padding: 0 0.5rem;
+    border: 2px solid var(--dark-color);
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    font-weight: 500;
+    margin-right: 0.625rem;
+}
+
+div.summary > div {
+    margin-bottom: 3rem;
+}
+
 @media only screen and (min-width: 800px){
-    div.card {
+    div.card, div.summary {
         padding: 1.5rem;
     }
     div.col-2 {
         flex: 1 0 40%;
     }
+    div.summary > div {
+        column-count: 2;
+    }
+    div.summary h5:first-of-type {
+        margin-top: 0;
+    }
 }
-
-/* iframe */
