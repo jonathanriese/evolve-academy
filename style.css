@@ -17,10 +17,15 @@ body {
     margin: 0;
 }
 
-ul, blockquote, p, h1, h2, h3, h4 {
+ul, blockquote, p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-color);
+}
+
 
 ul {
     list-style: none;
@@ -99,6 +104,12 @@ h1, blockquote {
     margin-bottom: 1rem;
 }
 
+h2 {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
 .cover p {
     margin-bottom: 6rem;
 }
@@ -112,11 +123,14 @@ h1, blockquote {
     max-width: 800px;
 }
 
+h5, h6 {
+    margin-bottom: 0.5rem;
+    color: var(--contrast-color-orange);
+}
+
 h5 {
     margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
     text-transform: uppercase;
-    color: var(--contrast-color-orange);
 }
 
 #faculty > :is(p, h1) {
@@ -135,6 +149,10 @@ h5 {
         border: 1px solid var(--dark-color);
         background-color: transparent;
     }
+}
+
+.bright {
+    font-weight: 500;
 }
 
 /* 3. components */
@@ -203,16 +221,13 @@ section.quote, section.bg-blue {
     text-align: center;
 }
 
-section.cover {
-    height: 100vh;
-    margin: 0;
-}
-
 .cover div > * {
     max-width: 700px;
 }
 
 section.cover {
+    height: 100vh;
+    margin: 0;
     background-position: center;
     background-size: cover;
 }
@@ -236,6 +251,20 @@ section.cover {
     background-image: url(https://res.cloudinary.com/dffi51zip/image/upload/c_scale,w_1920/v1618427207/Evolve/course-cover_pagyit.jpg);
 }
 
+#faculty section.cover {
+    background-image: url(https://res.cloudinary.com/dffi51zip/image/upload/o_70/c_scale,w_1920/v1618427210/Evolve/faculty-cover_yowyvw.jpg);
+}
+
+#community section.cover {
+    background-image: url(https://res.cloudinary.com/dffi51zip/image/upload/c_scale,e_contrast:-50,w_1920/v1618427203/Evolve/community-cover_tzoil5.jpg);
+    background-position: top;
+}
+
+#community section.bg-blue {
+    background-image: url(https://res.cloudinary.com/dffi51zip/image/upload/v1619018115/Evolve/Guest_Speakers-semi_transparent_zxxg1s.png);
+    background-size: cover;
+}
+
 @media screen and (min-width: 800px) {
     section {
         margin: 10rem 0;
@@ -252,6 +281,10 @@ section.cover {
 
 a.current {
     font-weight: 500;
+}
+
+nav li:last-of-type a {
+    opacity: 0.5;
 }
 
 header nav {
@@ -340,14 +373,9 @@ div.hamburger {
 
 /* columns */
 
-/* section#approach{
-    display: flex;
-    flex-flow: row;
-} */
-
-/* section#approach * {
-    max-width: 600px;
-} */
+.col-2 p {
+    margin-bottom: 2rem;
+}
 
 @media only screen and (min-width: 900px){
     section#approach{
@@ -360,6 +388,16 @@ div.hamburger {
     section#approach > img {
         margin-right: 5rem;
     }
+    .col-2 {
+        display: flex;
+        gap: 2rem;
+    }
+    .col-2 div {
+        flex: 1 1 40%;
+    }
+    .col-2 img {
+        width: 100%
+    }
 }
 
 /* cards */
@@ -370,12 +408,13 @@ div.hamburger {
     flex-flow: row wrap;
 }
 
-.col-2 div.card {
-    flex: 1 1 500px;
-}
-
 .col-3 div.card {
     flex: 1 1 300px;
+}
+
+#faculty div.card {
+    flex: 1 1 100%;
+    display: flex;
 }
 
 .card, .summary {
@@ -386,10 +425,6 @@ div.hamburger {
 
 div.summary {
     max-width: 700px;
-}
-
-#faculty div.card-container {
-    margin: 2.5rem 0;
 }
 
 .bg-blue .card {
@@ -407,22 +442,11 @@ ol {
     position: relative;
 }
 
-/*#course ol.col-1::before {
-    content: '';
-    height: 100%;
-    border-right: solid 1px var(--dark-color);
-    position: absolute;
-    left: 20%;
-} */
-
-li.card {
-    font-weight: 500;
-}
-
 li.card span {
     display: flex;
     align-items: top;
     align-items: flex-start;
+    font-weight: 500;
 }
 
 .card-container.col-1 {
@@ -450,19 +474,40 @@ section.bg-blue span::before {
 
 div.summary > div {
     margin-bottom: 3rem;
+
 }
 
 @media only screen and (min-width: 800px){
     div.card, div.summary {
         padding: 1.5rem;
     }
-    div.col-2 {
-        flex: 1 0 40%;
-    }
     div.summary > div {
+        height: 8rem;
+        column-fill: auto;
         column-count: 2;
     }
     div.summary h5:first-of-type {
         margin-top: 0;
     }
+    #faculty div.card {
+        flex: 1 1 300px;
+    }
+}
+
+/* faculty */
+
+#faculty div.card-container {
+    margin: 2.5rem 0;
+}
+
+#faculty section.bg-blue > * {
+    max-width: 700px;
+}
+
+#faculty div.card {
+    
+}
+
+@media screen and (min-width: 800px) {
+
 }
