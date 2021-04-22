@@ -382,12 +382,15 @@ div.hamburger {
 /* columns */
 
 .split img {
-    max-width: 100%;
+    width: 100%;
     margin-bottom: 1rem;
 }
 
 div.split {
     margin-bottom: 2.5rem;
+}
+.split h1 {
+    margin-bottom: 0.5rem;
 }
 
 @media only screen and (min-width: 900px){
@@ -401,7 +404,10 @@ div.split {
     }
     .split img {
         margin-right: 4rem;
-        max-width: 540px;
+        width: 40%;
+    }
+    .split h1{
+        margin-bottom: 0.5rem;
     }
     .col-2 {
         display: flex;
