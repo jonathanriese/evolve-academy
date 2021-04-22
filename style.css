@@ -133,10 +133,6 @@ h5 {
     text-transform: uppercase;
 }
 
-#faculty > :is(p, h1) {
-    text-align: center;
-}
-
 @media only screen and (min-width: 800px) {
     p.t-large, .quote p {
         font-size: 1.25rem;
@@ -412,7 +408,7 @@ div.hamburger {
     flex: 1 1 300px;
 }
 
-#faculty div.card {
+#community div.card {
     flex: 1 1 100%;
     display: flex;
 }
@@ -442,6 +438,12 @@ ol {
     position: relative;
 }
 
+#course .card li:last-of-type {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 0.25rem;
+}
+
 li.card span {
     display: flex;
     align-items: top;
@@ -451,13 +453,12 @@ li.card span {
 
 .card-container.col-1 {
     flex-direction: column;
-    max-width: 625px;
+    max-width: 725px;
 }
 
-.bg-blue li li {
+#course .card li {
     font-weight: 300;
     margin-left: 2.5rem;
-    margin-top: 0.5rem;
 }
 
 section.bg-blue span::before {
@@ -474,7 +475,6 @@ section.bg-blue span::before {
 
 div.summary > div {
     margin-bottom: 3rem;
-
 }
 
 @media only screen and (min-width: 800px){
@@ -482,32 +482,41 @@ div.summary > div {
         padding: 1.5rem;
     }
     div.summary > div {
-        height: 8rem;
         column-fill: auto;
         column-count: 2;
+    }
+    #community div.summary > div {
+        height: 8rem;
+    }
+    #course div.summary > div {
+        height: 15rem;
     }
     div.summary h5:first-of-type {
         margin-top: 0;
     }
-    #faculty div.card {
+    #community div.card {
         flex: 1 1 300px;
     }
 }
 
-/* faculty */
+/* guest faculty */
 
-#faculty div.card-container {
+#community section.quote {
+    background-color: var(--bright-color);
+    padding-top: 0;
+}
+
+#community div.card-container {
     margin: 2.5rem 0;
 }
 
-#faculty section.bg-blue > * {
+#community section.bg-blue > * {
     max-width: 700px;
 }
 
-#faculty div.card {
-    
+#community section.bg-blue > p {
+    color: var(--bright-color);
+    font-weight: 400;
 }
 
-@media screen and (min-width: 800px) {
-
-}
+/* testemonials */
