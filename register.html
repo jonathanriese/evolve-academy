@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Evolve Academy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="media/favicon.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfS3SQmhw9bJ2bHz1ywYZ4Lut3faY4xP-L5D1VnARmivtocw/viewform?embedded=true" width="640" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<body id="course">
+    <header class="header nav-menu">
+        <nav>
+            <ul>
+                <li><a href="index.html">Evolve Academy</a></li>
+                <li><a href="course.html">Course</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a class="current" href="faculty.html">Faculty</a></li>
+                <li><a href="">Member</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main id="register">
+        <section>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeP2xmv_jlbBH9p__BaoBJPCsKXs49QuUruBlVvEjcHDdOKog/viewform?embedded=true" width="700" height="2000" frameborder="0" marginheight="0" marginwidth="0" onload="loaded();" id="registration-form">Loading…</iframe>
+        </section>
+    </main>
+    <footer>
+        <ul>
+            <li>© 2021 — Evolve Academy</li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="mailto:info@evolve-now.com">Contact Us</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </footer>
 </body>
+<script src="app.js"></script>
 </html>

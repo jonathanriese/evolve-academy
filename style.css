@@ -95,6 +95,7 @@ a.button::after {
 
 footer a {
     color: var(--bright-color);
+    font-weight: 300;
 }
 
 h1, blockquote {
@@ -207,6 +208,10 @@ footer ul {
     flex-direction: column;
 }
 
+footer li:last-of-type a {
+    color: var(--contrast-color-orange);
+}
+
 
 .bg-dark p {
     color: var(--bright-color);
@@ -274,6 +279,9 @@ section.cover {
     }
     footer ul {
         flex-direction: row;
+    }
+    footer li:last-of-type {
+        justify-self: end;
     }
 }
 
@@ -560,4 +568,12 @@ div.summary > div {
 #testimonials h6 {
     margin-top: 2rem;
     font-size: 0.875rem;
+}
+
+#register section {
+    margin: 0;
+}
+
+#register iframe {
+    margin: 5rem 0;
 }
