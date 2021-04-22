@@ -212,6 +212,10 @@ footer ul {
     color: var(--bright-color);
 }
 
+.quote {
+    text-align: center;
+}
+
 section.quote, section.bg-blue {
     background-color: var(--contrast-color-blue);
     text-align: center;
@@ -369,20 +373,27 @@ div.hamburger {
 
 /* columns */
 
-.col-2 p {
-    margin-bottom: 2rem;
+.split img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+div.split {
+    margin-bottom: 2.5rem;
 }
 
 @media only screen and (min-width: 900px){
-    section#approach{
+    .split{
         display: flex;
         flex-flow: row;
+        align-items: flex-start;
     }
-    section#approach > * {
+    .split > * {
         max-width: 540px;
     }
-    section#approach > img {
-        margin-right: 5rem;
+    .split img {
+        margin-right: 4rem;
+        max-width: 540px;
     }
     .col-2 {
         display: flex;
@@ -392,7 +403,7 @@ div.hamburger {
         flex: 1 1 40%;
     }
     .col-2 img {
-        width: 100%
+        width: 100%;
     }
 }
 
@@ -519,4 +530,34 @@ div.summary > div {
     font-weight: 400;
 }
 
-/* testemonials */
+/* faculty */
+
+#faculty div.container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#faculty div.quote {
+    margin-top: 5rem;
+}
+
+#faculty .cover blockquote {
+    margin-bottom: 0.5rem;
+}
+
+/* testimonials */
+
+#testimonials .card-container {
+}
+
+#testimonials .card {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+#testimonials h6 {
+    margin-top: 2rem;
+    font-size: 0.875rem;
+}
