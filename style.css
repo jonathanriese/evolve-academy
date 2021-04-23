@@ -189,7 +189,10 @@ header {
 :is(header, footer) ul {
     width: 100%;
     display: flex;
-    gap: 2rem;
+}
+
+:is(header, footer) li {
+    margin: 0 2rem 2rem 0;
 }
 
 section > *, header nav, footer ul {
@@ -280,9 +283,6 @@ section.cover {
     footer ul {
         flex-direction: row;
     }
-    footer li:last-of-type {
-        justify-self: end;
-    }
 }
 
 /* navigation */
@@ -360,8 +360,9 @@ div.hamburger {
 }
 
 @media screen and (min-width: 800px) {
-    nav li:last-of-type {
+    nav li:last-of-type, footer li:last-of-type {
         margin-left: auto;
+        margin-right: 0;
     }
     .hamburger {
         display: none;
@@ -425,7 +426,6 @@ div.split {
 
 .card-container {
     display: flex;
-    gap: 1rem;
     flex-flow: row wrap;
 }
 
@@ -442,6 +442,7 @@ div.split {
     background-color: var(--medium-color);
     border-radius: 12px;
     padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 div.summary {
@@ -503,6 +504,12 @@ div.summary > div {
 }
 
 @media only screen and (min-width: 800px){
+    .card-container {
+        margin-right: -1rem;
+    }
+    .card {
+        margin-right: 1rem;
+    }
     div.card, div.summary {
         padding: 1.5rem;
     }
