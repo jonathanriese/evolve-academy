@@ -337,7 +337,7 @@ header.active li {
     display: block;
 }
 
-header.scrolled {
+header.scrolled, #register header {
     background-color: var(--bright-color);
     transition: background-color 500ms ease;
 }
