@@ -63,6 +63,10 @@ p {
     color: var(--black-color);
 }
 
+p + p {
+    margin-top: 1rem;
+}
+
 a {
     font-weight: 500;
     color: var(--dark-color);
@@ -609,4 +613,11 @@ div.summary > div {
 
 #register iframe {
     margin: 5rem 0;
+}
+
+/* terms and privacy */
+
+:where(#terms, #privacy) section {
+    margin-top: 0;
+    padding-top: 10rem;
 }
