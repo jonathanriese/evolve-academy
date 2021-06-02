@@ -29,3 +29,11 @@ function loaded () {
     }
 
 }
+
+// const contentWrapper = document.querySelector(".contentWrapper");
+
+// async function fetchModule(moduleNo) {
+//     const res = await fetch(`http://localhost:1337/modules/${moduleNo}`);
+//     const module = await res.json();
+//     console.log(module);
+// }

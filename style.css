@@ -315,10 +315,6 @@ a.current {
     font-weight: 500;
 }
 
-nav li:last-of-type a {
-    opacity: 0.5;
-}
-
 header nav {
     display: flex;
 }
