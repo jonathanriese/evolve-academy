@@ -55,6 +55,10 @@ html {
     scroll-behavior: smooth;
 }
 
+::selection {
+    background: #dff8ff;
+}
+
 /* typography */
 
 p {
